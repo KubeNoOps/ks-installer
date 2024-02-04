@@ -33,6 +33,6 @@ jobs:
 
       - name: Push image
         run: |
-          IMAGE=$IMAGE_REPO/$IMAGE_NAME:${{ steps.get_version.outputs.VERSION }}
+          IMAGE=$IMAGE_REPO/$IMAGE_NAME:${{ steps.get_commit_hash.outputs.COMMIT_HASH  }}
           docker buildx build --platform linux/amd64,linux/arm64 --push -f Dockerfile.complete -t $IMAGE .
           echo "Push $IMAGE success!"
