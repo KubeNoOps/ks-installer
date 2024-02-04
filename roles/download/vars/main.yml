@@ -1,0 +1,4 @@
+ks_apiserver_repo: "ghcr.io/kubenoops/ks-apiserver"
+ks_apiserver_tag: "master"
+ks_controller_manager_repo: "ghcr.io/kubenoops/ks-controller-manager"
+ks_controller_manager_tag: "master"
