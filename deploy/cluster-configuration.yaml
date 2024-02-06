@@ -5,7 +5,7 @@ metadata:
   name: ks-installer
   namespace: kubesphere-system
   labels:
-    version: master
+    version: v3.4.1
 spec:
   persistence:
     storageClass: ""        # If there is no default StorageClass in your cluster, you need to specify an existing StorageClass here.
@@ -103,7 +103,7 @@ spec:
     # webhook:
     #   resources: {}
   devops:                  # (CPU: 0.47 Core, Memory: 8.6 G) Provide an out-of-the-box CI/CD system based on Jenkins, and automated workflow tools including Source-to-Image & Binary-to-Image.
-    enabled: false         # Enable or disable the KubeSphere DevOps System.
+    enabled: true         # Enable or disable the KubeSphere DevOps System.
     jenkinsCpuReq: 0.5
     jenkinsCpuLim: 1
     jenkinsMemoryReq: 4Gi
@@ -167,7 +167,7 @@ spec:
       type: none # Specify "weave-scope" for this field to enable Service Topology. "none" means that Service Topology is disabled.
   openpitrix: # An App Store that is accessible to all platform tenants. You can use it to manage apps across their entire lifecycle.
     store:
-      enabled: false # Enable or disable the KubeSphere App Store.
+      enabled: true # Enable or disable the KubeSphere App Store.
   servicemesh:         # (0.3 Core, 300 MiB) Provide fine-grained traffic management, observability and tracing, and visualized traffic topology.
     enabled: false     # Base component (pilot). Enable or disable KubeSphere Service Mesh (Istio-based).
     istio:  # Customizing the istio installation configuration, refer to https://istio.io/latest/docs/setup/additional-setup/customize-installation/
@@ -200,7 +200,7 @@ spec:
       # edgeService:
       #   resources: {}
   gatekeeper:        # Provide admission policy and rule management, A validating (mutating TBA) webhook that enforces CRD-based policies executed by Open Policy Agent.
-    enabled: false   # Enable or disable Gatekeeper.
+    enabled: true   # Enable or disable Gatekeeper.
     # controller_manager:
     #   resources: {}
     # audit:
