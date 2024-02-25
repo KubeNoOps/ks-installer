@@ -22,6 +22,8 @@ jobs:
   test-on-k8s:
     runs-on: ubuntu-latest
     timeout-minutes: 150
+    outputs:
+      is_MY_SECRET_set: ${{ steps.checksecret_job.outputs.is_MY_SECRET_set }}
     steps:
     - uses: actions/checkout@v2
       name: Checkout 
@@ -93,8 +95,8 @@ jobs:
 
   push-image-to-dockerhub:
     runs-on: ubuntu-latest
-    needs: [Test-on-k8s-v-1-19-7]
-    if: needs.Test-on-k8s-v-1-19-7.outputs.is_MY_SECRET_set == 'true'
+    needs: [test-on-k8s]
+    if: needs.test-on-k8s.outputs.is_MY_SECRET_set == 'true'
 
     steps:
       - uses: actions/checkout@v2
