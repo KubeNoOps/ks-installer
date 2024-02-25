@@ -16,7 +16,7 @@ env:
   IMAGE_NAME: ks-installer
   IMAGE_REPO: kubespheredev
   IMAGE_VERSION: latest
-  #SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TEST }}
+  #SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL_TEST }} ?
 
 jobs:
   test-on-k8s:
