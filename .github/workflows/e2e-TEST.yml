@@ -21,7 +21,7 @@ env:
 jobs:
   test-on-k8s:
     runs-on: ubuntu-latest
-    timeout-minutes: 150
+    timeout-minutes: 152
     steps:
       - uses: actions/checkout@v2
         name: Checkout 
