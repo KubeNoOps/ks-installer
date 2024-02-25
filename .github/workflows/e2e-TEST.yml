@@ -21,75 +21,75 @@ env:
 jobs:
   test-on-k8s:
     runs-on: ubuntu-latest
-    timeout-minutes: 152
+    timeout-minutes: 150
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout 
+    - uses: actions/checkout@v2
+      name: Checkout 
 
-      - name: Set up QEMU
-        uses: docker/setup-qemu-action@v1
-        with:
-          platforms: all
+    - name: Set up QEMU
+      uses: docker/setup-qemu-action@v1
+      with:
+        platforms: all
 
-      - name: Set up Docker buildx
-        uses: docker/setup-buildx-action@v1
-      
-      - name: Install KinD
-        run: |
-          curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64
-          chmod +x ./kind
-          mv ./kind /usr/local/bin/kind
+    - name: Set up Docker buildx
+      uses: docker/setup-buildx-action@v1
+    
+    - name: Install KinD
+      run: |
+        curl -Lo ./kind https://kind.sigs.k8s.io/dl/v0.22.0/kind-linux-amd64
+        chmod +x ./kind
+        mv ./kind /usr/local/bin/kind
 
-      - name: Build image (pr)
-        if: ${{ github.event_name == 'pull_request' }}
-        run: |
-          echo ${{ github.base_ref }}
-          tag=${{ github.base_ref }} && sed -i "2idev_tag\: $tag" roles/download/defaults/main.yml && sed -i "/    \"version\"/s/\:.*/\: \"$tag\"/g" controller/installRunner.py
-          docker build . --file Dockerfile.complete --tag ks-installer
-      
-      - name: Build image (push)
-        if: ${{ github.event_name == 'push' }}
-        run: |
-          echo ${GITHUB_REF#refs/heads/}
-          tag=${GITHUB_REF#refs/heads/} && sed -i "2idev_tag\: $tag" roles/download/defaults/main.yml && sed -i "/    \"version\"/s/\:.*/\: \"$tag\"/g" controller/installRunner.py
-          docker build . --file Dockerfile.complete --tag ks-installer
+    - name: Build image (pr)
+      if: ${{ github.event_name == 'pull_request' }}
+      run: |
+        echo ${{ github.base_ref }}
+        tag=${{ github.base_ref }} && sed -i "2idev_tag\: $tag" roles/download/defaults/main.yml && sed -i "/    \"version\"/s/\:.*/\: \"$tag\"/g" controller/installRunner.py
+        docker build . --file Dockerfile.complete --tag ks-installer
+    
+    - name: Build image (push)
+      if: ${{ github.event_name == 'push' }}
+      run: |
+        echo ${GITHUB_REF#refs/heads/}
+        tag=${GITHUB_REF#refs/heads/} && sed -i "2idev_tag\: $tag" roles/download/defaults/main.yml && sed -i "/    \"version\"/s/\:.*/\: \"$tag\"/g" controller/installRunner.py
+        docker build . --file Dockerfile.complete --tag ks-installer
 
-      - name: Create KinD Cluster
-        run: |
-          kind create cluster --config=.github/workflows/kind/kind.yaml
+    - name: Create KinD Cluster
+      run: |
+        kind create cluster --config=.github/workflows/kind/kind.yaml
 
-      - name: Load image to kind
-        run: kind load docker-image ks-installer --name chart-testing
+    - name: Load image to kind
+      run: kind load docker-image ks-installer --name chart-testing
 
-      - name: Deploy KubeSphere to Kind
-        run: |
-          sed -i 's/image: .*/image: ks-installer/g' deploy/kubesphere-installer.yaml
-          sed -i 's/imagePullPolicy: .*/imagePullPolicy: IfNotPresent/g' deploy/kubesphere-installer.yaml
-          sed -i 's/jenkinsMemoryReq: .*/jenkinsMemoryReq: 200Mi/g' deploy/cluster-configuration.yaml
-          cat deploy/*.yaml
-          kubectl apply -f deploy/kubesphere-installer.yaml
-          kubectl apply -f deploy/cluster-configuration.yaml
-          bash scripts/check_cluster_status.sh
+    - name: Deploy KubeSphere to Kind
+      run: |
+        sed -i 's/image: .*/image: ks-installer/g' deploy/kubesphere-installer.yaml
+        sed -i 's/imagePullPolicy: .*/imagePullPolicy: IfNotPresent/g' deploy/kubesphere-installer.yaml
+        sed -i 's/jenkinsMemoryReq: .*/jenkinsMemoryReq: 200Mi/g' deploy/cluster-configuration.yaml
+        cat deploy/*.yaml
+        kubectl apply -f deploy/kubesphere-installer.yaml
+        kubectl apply -f deploy/cluster-configuration.yaml
+        bash scripts/check_cluster_status.sh
 
-      - name: Test plugin
-        run: |
-          kubectl -n kubesphere-system patch cc ks-installer --type merge --patch '{"spec":{"servicemesh":{"enabled":true},"devops":{"enabled":true},"alerting":{"enabled":true},"auditing":{"enabled":true},"console":{"enableMultiLogin":true},"events":{"enabled":true},"logging":{"enabled":true},"metrics_server":{"enabled":true},"network":{"networkpolicy":{"enabled":true}},"openpitrix":{"store":{"enabled":true}}}}'
-          bash scripts/check_cluster_status.sh
+    - name: Test plugin
+      run: |
+        kubectl -n kubesphere-system patch cc ks-installer --type merge --patch '{"spec":{"servicemesh":{"enabled":true},"devops":{"enabled":true},"alerting":{"enabled":true},"auditing":{"enabled":true},"console":{"enableMultiLogin":true},"events":{"enabled":true},"logging":{"enabled":true},"metrics_server":{"enabled":true},"network":{"networkpolicy":{"enabled":true}},"openpitrix":{"store":{"enabled":true}}}}'
+        bash scripts/check_cluster_status.sh
 
-      - name: Check DOCKER_PASSWORD secret
-        id: checksecret_job
-        env:
-            MY_SECRET: ${{ secrets.DOCKER_PASSWORD }}
-        run: |
-            echo "is_MY_SECRET_set: ${{ env.MY_SECRET != '' }}"
-            echo "::set-output name=is_MY_SECRET_set::${{ env.MY_SECRET != '' }}"
+    - name: Check DOCKER_PASSWORD secret
+      id: checksecret_job
+      env:
+          MY_SECRET: ${{ secrets.DOCKER_PASSWORD }}
+      run: |
+          echo "is_MY_SECRET_set: ${{ env.MY_SECRET != '' }}"
+          echo "::set-output name=is_MY_SECRET_set::${{ env.MY_SECRET != '' }}"
 
-      - name: slack
-        uses: 8398a7/action-slack@v3
-        with:
-          status: ${{ job.status }}
-          fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
-        if: ${{ failure() }}
+    - name: slack
+      uses: 8398a7/action-slack@v3
+      with:
+        status: ${{ job.status }}
+        fields: repo,message,commit,author,action,eventName,ref,workflow,job,took
+      if: ${{ failure() }}
 
   push-image-to-dockerhub:
     runs-on: ubuntu-latest
