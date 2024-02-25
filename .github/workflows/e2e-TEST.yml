@@ -5,12 +5,12 @@ on:
     branches:
       - 'master'
       - 'release-*'
-      - 'ks-installer'
+      - 'kn-installer'
   pull_request:
     branches:
       - 'master'
       - 'release-*'
-      - 'ks-installer'
+      - 'kn-installer'
 env:
   # TODO: Change variable to your image's name.
   IMAGE_NAME: ks-installer
