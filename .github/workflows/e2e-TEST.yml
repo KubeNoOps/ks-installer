@@ -61,7 +61,7 @@ jobs:
         kind create cluster --config=.github/workflows/kind/kind.yaml
 
     - name: Load image to kind
-      run: kind load docker-image ks-installer --name chart-testing
+      run: kind load docker-image ks-installer --name kubesphere
 
     - name: Deploy KubeSphere to Kind
       run: |
