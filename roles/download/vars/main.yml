@@ -21,4 +21,4 @@ notification_manager_tag: latest
 openpitrix_job_tag: "master"
 openpitrix_job_repo: "ghcr.io/kubenoops/openpitrix-jobs"
 s2i_registry: "ghcr.io/kubenoops"
-s2ioperator_tag: "latest"
+s2ioperator_tag: "master"

@@ -64,7 +64,7 @@ ks_kubectl_repo: "bitnami/kubectl"
 ks_kubectl_tag: 1.28
 # kubectl versions
 ks_kubectl_versions:
-  v1.22.0: v1.22.0
+  v1.22.0: 1.28
   v1.21.0: v1.21.0
   v1.20.0: v1.20.0
   v1.19.0: v1.19.1
