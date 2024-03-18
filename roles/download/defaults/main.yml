@@ -61,10 +61,11 @@ ks_alerting_migration_tag: "v3.1.0"
 ks_console_repo: "{{ base_repo }}{{ namespace_override | default('kubespheredev') }}/ks-console"
 ks_console_tag: "{{ ks_version }}"
 ks_kubectl_repo: "bitnami/kubectl"
-ks_kubectl_tag: 1.28
+ks_kubectl_tag: v1.28.0
 # kubectl versions
 ks_kubectl_versions:
-  v1.22.0: 1.28
+  v1.28.0: 1.28
+  v1.22.0: v1.22.0
   v1.21.0: v1.21.0
   v1.20.0: v1.20.0
   v1.19.0: v1.19.1
