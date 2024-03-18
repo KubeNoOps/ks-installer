@@ -22,3 +22,7 @@ openpitrix_job_tag: "master"
 openpitrix_job_repo: "ghcr.io/kubenoops/openpitrix-jobs"
 s2i_registry: "ghcr.io/kubenoops"
 s2ioperator_tag: "master"
+kube_state_metrics_repo: "ghcr.io/kubenoops/kube-state-metrics"
+kube_state_metrics_tag: v2.11.0
+kube_rbac_proxy_repo: "ghcr.io/kubenoops/kube-rbac-proxy"
+kube_rbac_proxy_tag: v0.16.0
