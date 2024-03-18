@@ -3,7 +3,7 @@ on:
     # Sequence of patterns matched against refs/tags
     tags:
     - 'v*' # Push events to matching v*, i.e. v1.0, v20.15.10
-    branches: [master]
+    branches: [master,kn-installer]
 name: Build 
 
 env:
@@ -20,6 +20,10 @@ jobs:
         id: get_version
         run: echo ::set-output name=VERSION::${GITHUB_REF#refs/tags/}
 
+      - name: Set short hash
+        id: vars
+        run: echo "sha_short=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v1
         with:
@@ -33,6 +37,6 @@ jobs:
 
       - name: Push image
         run: |
-          IMAGE=$IMAGE_REPO/$IMAGE_NAME:v3.4.0
+          IMAGE=$IMAGE_REPO/$IMAGE_NAME:${{ steps.vars.outputs.sha_short }}
           docker buildx build --platform linux/amd64,linux/arm64 --push -f Dockerfile.complete -t $IMAGE .
           echo "Push $IMAGE success!"
