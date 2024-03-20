@@ -26,6 +26,6 @@ kube_state_metrics_repo: "ghcr.io/kubenoops/kube-state-metrics"
 kube_state_metrics_tag: v2.11.0
 kube_rbac_proxy_repo: "ghcr.io/kubenoops/kube-rbac-proxy"
 kube_rbac_proxy_tag: v0.16.0
-tower_repo: "ghcr.io/kubenoops"
+tower_repo: ghcr.io/kubenoops
 tower_image: tower
 tower_image_tag: "latest"
