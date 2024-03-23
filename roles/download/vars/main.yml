@@ -9,7 +9,7 @@ ks_devops_tools_tag: "v3.4.1"
 ks_devops_controller_tag: "v3.4.1"
 ks_devops_apiserver_tag: "v3.4.1"
 jenkins_repo: "ghcr.io/mohamed-rafraf/kn-jenkins"
-jenkins_tag: "jenkins_tag"
+jenkins_tag: "2.440.1-jdk17"
 prometheus_config_reloader_repo: "ghcr.io/prometheus-operator/prometheus-config-reloader"
 prometheus_config_reloader_tag: "v0.71.2"
 prometheus_operator_repo: ghcr.io/prometheus-operator/prometheus-operator
