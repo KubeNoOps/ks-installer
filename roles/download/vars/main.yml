@@ -3,11 +3,11 @@ ks_apiserver_tag: "v3.4.1"
 ks_controller_manager_repo: "ghcr.io/kubenoops/ks-controller-manager"
 ks_controller_manager_tag: "v3.4.1"
 ks_console_repo: "ghcr.io/kubenoops/ks-console"
-ks_console_tag: "v3.4.1"
+ks_console_tag: "main"
 ks_devops_registry: "ghcr.io/kubenoops"
-ks_devops_tools_tag: "v3.4.1"
-ks_devops_controller_tag: "v3.4.1"
-ks_devops_apiserver_tag: "v3.4.1"
+ks_devops_tools_tag: "main-1b5f1a7"
+ks_devops_controller_tag: "main-1b5f1a7"
+ks_devops_apiserver_tag: "main-1b5f1a7"
 jenkins_repo: "ghcr.io/mohamed-rafraf/kn-jenkins"
 jenkins_tag: "2.440.1-jdk17"
 prometheus_config_reloader_repo: "ghcr.io/prometheus-operator/prometheus-config-reloader"
@@ -21,7 +21,7 @@ notification_manager_tag: latest
 openpitrix_job_tag: "master"
 openpitrix_job_repo: "ghcr.io/kubenoops/openpitrix-jobs"
 s2i_registry: "ghcr.io/kubenoops"
-s2ioperator_tag: "master"
+s2ioperator_tag: "main"
 kube_state_metrics_repo: "ghcr.io/kubenoops/kube-state-metrics"
 kube_state_metrics_tag: v2.11.0
 kube_rbac_proxy_repo: "ghcr.io/kubenoops/kube-rbac-proxy"
@@ -31,3 +31,13 @@ tower_image: tower
 tower_image_tag: "latest"
 notification_manager_operator_proxy_repo: "ghcr.io/kubenoops/kube-rbac-proxy"
 notification_manager_operator_proxy_tag: v0.16.0
+kube_events_ruler_repo: dghcr.io/kubenoops/kube-events-ruler
+kube_events_ruler_tag: latest
+
+kube_events_operator_repo: "ghcr.io/kubenoops/kube-events-operator"
+kube_events_operator_tag: latest
+kube_events_exporter_repo: "ghcr.io/kubenoops/kube-events-exporter"
+kube_events_exporter_tag: latest
+kubefed_repo:  "ghcr.io/kubenoops"
+kubefed_image: kubefed
+kubefed_image_tag: 960eda92
