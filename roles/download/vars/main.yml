@@ -34,7 +34,7 @@ notification_manager_operator_proxy_tag: v0.16.0
 notification_tenant_sidecar_repo: "ghcr.io/kubenoops/notification-tenant-sidecar"
 notification_tenant_sidecar_tag: v3.2.0
 
-kube_events_ruler_repo: dghcr.io/kubenoops/kube-events-ruler
+kube_events_ruler_repo: ghcr.io/kubenoops/kube-events-ruler
 kube_events_ruler_tag: latest
 
 kube_events_operator_repo: "ghcr.io/kubenoops/kube-events-operator"
