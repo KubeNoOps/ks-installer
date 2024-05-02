@@ -10,14 +10,14 @@ ks_devops_controller_tag: "main-1b5f1a7"
 ks_devops_apiserver_tag: "main-1b5f1a7"
 jenkins_repo: "ghcr.io/mohamed-rafraf/kn-jenkins"
 jenkins_tag: "2.440.1-jdk17"
-prometheus_config_reloader_repo: "ghcr.io/prometheus-operator/prometheus-config-reloader"
-prometheus_config_reloader_tag: "v0.71.2"
-prometheus_operator_repo: ghcr.io/prometheus-operator/prometheus-operator
-prometheus_operator_tag: v0.71.2
-notification_manager_operator_repo: "ghcr.io/kubenoops/notification-manager-operator"
-notification_manager_operator_tag: latest
-notification_manager_repo: "ghcr.io/kubenoops/notification-manager"
-notification_manager_tag: latest
+# prometheus_config_reloader_repo: "ghcr.io/prometheus-operator/prometheus-config-reloader"
+# prometheus_config_reloader_tag: "v0.71.2"
+# prometheus_operator_repo: ghcr.io/prometheus-operator/prometheus-operator
+# prometheus_operator_tag: v0.71.2
+# notification_manager_operator_repo: "ghcr.io/kubenoops/notification-manager-operator"
+# notification_manager_operator_tag: latest
+# notification_manager_repo: "ghcr.io/kubenoops/notification-manager"
+# notification_manager_tag: latest
 openpitrix_job_tag: "master"
 openpitrix_job_repo: "ghcr.io/kubenoops/openpitrix-jobs"
 s2i_registry: "ghcr.io/kubenoops"
@@ -29,10 +29,10 @@ kube_rbac_proxy_tag: v0.16.0
 tower_repo: ghcr.io/kubenoops
 tower_image: tower
 tower_image_tag: "latest"
-notification_manager_operator_proxy_repo: "ghcr.io/kubenoops/kube-rbac-proxy"
-notification_manager_operator_proxy_tag: v0.16.0
-notification_tenant_sidecar_repo: "ghcr.io/kubenoops/notification-tenant-sidecar"
-notification_tenant_sidecar_tag: v3.2.0
+# notification_manager_operator_proxy_repo: "ghcr.io/kubenoops/kube-rbac-proxy"
+# notification_manager_operator_proxy_tag: v0.16.0
+# notification_tenant_sidecar_repo: "ghcr.io/kubenoops/notification-tenant-sidecar"
+# notification_tenant_sidecar_tag: v3.2.0
 
 kube_events_ruler_repo: ghcr.io/kubenoops/kube-events-ruler
 kube_events_ruler_tag: latest
