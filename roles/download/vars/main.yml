@@ -13,7 +13,7 @@ jenkins_tag: "2.440.1-jdk17"
 prometheus_config_reloader_repo: "ghcr.io/prometheus-operator/prometheus-config-reloader"
 prometheus_config_reloader_tag: "v0.55.1"
 prometheus_operator_repo: ghcr.io/prometheus-operator/prometheus-operator
-prometheus_operator_tag: v0.55.1
+prometheus_operator_tag: v0.71.2
 notification_manager_operator_repo: "ghcr.io/kubenoops/notification-manager-operator"
 notification_manager_operator_tag: latest
 notification_manager_repo: "ghcr.io/kubenoops/notification-manager"
