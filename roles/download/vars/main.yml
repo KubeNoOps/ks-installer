@@ -44,3 +44,9 @@ kube_events_exporter_tag: latest
 kubefed_repo:  "ghcr.io/kubenoops"
 kubefed_image: kubefed
 kubefed_image_tag: 960eda92
+ks_log_sidecar_injector_repo: ghcr.io/kubenoops/log-sidecar-injector"
+ks_log_sidecar_injector_tag: latest
+ks_fluent_bit_repo: "ghcr.io/fluent/fluent-bit"
+ks_fluent_bit_tag: "1.9.4"
+fluentbit_operator_repo: "ghcr.io/fluent/fluent-operator/fluent-operator"
+fluentbit_operator_tag: v2.8.0
