@@ -50,3 +50,7 @@ ks_fluent_bit_repo: "ghcr.io/fluent/fluent-bit"
 ks_fluent_bit_tag: "1.9.4"
 fluentbit_operator_repo: "ghcr.io/fluent/fluent-operator/fluent-operator"
 fluentbit_operator_tag: v2.8.0
+
+#metrics:
+metrics_server_repo: "registry.k8s.io/metrics-server/metrics-server"
+metrics_server_tag: v0.7.1
