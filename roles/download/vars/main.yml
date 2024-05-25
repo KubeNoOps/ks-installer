@@ -47,7 +47,7 @@ kubefed_image_tag: 960eda92
 
 
 # ks-logger
-ks_log_sidecar_injector_repo: ghcr.io/kubenoops/log-sidecar-injector"
+ks_log_sidecar_injector_repo: ghcr.io/kubenoops/log-sidecar-injector
 ks_log_sidecar_injector_tag: latest
 ks_fluent_bit_repo: "ghcr.io/fluent/fluent-bit"
 ks_fluent_bit_tag: "1.9.4"
@@ -63,4 +63,4 @@ auditing_webhook_tag: v0.2.0
 
 #metrics:
 metrics_server_repo: "registry.k8s.io/metrics-server/metrics-server"
-metrics_server_tag: v0.7.1
+metrics_server_tag: v0.4.2
