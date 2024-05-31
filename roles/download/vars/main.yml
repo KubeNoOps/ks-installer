@@ -48,7 +48,7 @@ kubefed_image_tag: 960eda92
 
 # ks-logger
 ks_log_sidecar_injector_repo: ghcr.io/kubenoops/log-sidecar-injector
-ks_log_sidecar_injector_tag: latest
+ks_log_sidecar_injector_tag: v1.2.0
 ks_fluent_bit_repo: "ghcr.io/fluent/fluent-bit"
 ks_fluent_bit_tag: "1.9.4"
 fluentbit_operator_repo: "ghcr.io/fluent/fluent-operator/fluent-operator"
