@@ -1,46 +1,66 @@
+
+# ks-core
+
 ks_apiserver_repo: "ghcr.io/kubenoops/ks-apiserver"
 ks_apiserver_tag: "v3.4.1"
 ks_controller_manager_repo: "ghcr.io/kubenoops/ks-controller-manager"
 ks_controller_manager_tag: "v3.4.1"
 ks_console_repo: "ghcr.io/kubenoops/ks-console"
 ks_console_tag: "main"
+
+# ks-devops
 ks_devops_registry: "ghcr.io/kubenoops"
-ks_devops_tools_tag: "main-1b5f1a7"
-ks_devops_controller_tag: "main-1b5f1a7"
-ks_devops_apiserver_tag: "main-1b5f1a7"
+ks_devops_tools_tag: "v3.4.1"
+ks_devops_controller_tag: "v3.4.1"
+ks_devops_apiserver_tag: "v3.4.1"
 jenkins_repo: "ghcr.io/mohamed-rafraf/kn-jenkins"
 jenkins_tag: "2.440.1-jdk17"
+
+# ks-monitoring
+
 prometheus_config_reloader_repo: "ghcr.io/prometheus-operator/prometheus-config-reloader"
 prometheus_config_reloader_tag: "v0.55.1"
 prometheus_operator_repo: ghcr.io/prometheus-operator/prometheus-operator
 prometheus_operator_tag: v0.55.1
+
+openpitrix_job_tag: "master"
+kube_state_metrics_repo: "ghcr.io/kubenoops/kube-state-metrics"
+kube_state_metrics_tag: v2.11.0
+
+openpitrix_job_repo: "ghcr.io/kubenoops/openpitrix-jobs"
+s2i_registry: "ghcr.io/kubenoops"
+s2ioperator_tag: "main"
+
+# notification-manager 
+
 notification_manager_operator_repo: "ghcr.io/kubenoops/notification-manager-operator"
 notification_manager_operator_tag: latest
 notification_manager_repo: "ghcr.io/kubenoops/notification-manager"
 notification_manager_tag: latest
-openpitrix_job_tag: "master"
-openpitrix_job_repo: "ghcr.io/kubenoops/openpitrix-jobs"
-s2i_registry: "ghcr.io/kubenoops"
-s2ioperator_tag: "main"
-kube_state_metrics_repo: "ghcr.io/kubenoops/kube-state-metrics"
-kube_state_metrics_tag: v2.11.0
-kube_rbac_proxy_repo: "ghcr.io/kubenoops/kube-rbac-proxy"
-kube_rbac_proxy_tag: v0.16.0
-tower_repo: ghcr.io/kubenoops
-tower_image: tower
-tower_image_tag: "latest"
 notification_manager_operator_proxy_repo: "ghcr.io/kubenoops/kube-rbac-proxy"
 notification_manager_operator_proxy_tag: v0.16.0
 notification_tenant_sidecar_repo: "ghcr.io/kubenoops/notification-tenant-sidecar"
 notification_tenant_sidecar_tag: v3.2.0
 
+
+
+kube_rbac_proxy_repo: "ghcr.io/kubenoops/kube-rbac-proxy"
+kube_rbac_proxy_tag: v0.16.0
+tower_repo: ghcr.io/kubenoops
+tower_image: tower
+tower_image_tag: "latest"
+
+# ks-events
+
 kube_events_ruler_repo: ghcr.io/kubenoops/kube-events-ruler
 kube_events_ruler_tag: latest
-
 kube_events_operator_repo: "ghcr.io/kubenoops/kube-events-operator"
 kube_events_operator_tag: latest
 kube_events_exporter_repo: "ghcr.io/kubenoops/kube-events-exporter"
 kube_events_exporter_tag: latest
+
+# ks-fed
+
 kubefed_repo:  "ghcr.io/kubenoops"
 kubefed_image: kubefed
 kubefed_image_tag: 960eda92
@@ -64,3 +84,11 @@ auditing_webhook_tag: v0.2.0
 #metrics:
 metrics_server_repo: "registry.k8s.io/metrics-server/metrics-server"
 metrics_server_tag: v0.4.2
+
+
+# kiali
+
+kiali_operator_repo: "quay.io/kiali/kiali-operator"
+kiali_operator_tag: v1.50.1
+kiali_repo: "quay.io/kiali/kiali"
+kiali_tag: v1.50
