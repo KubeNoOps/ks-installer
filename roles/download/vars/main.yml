@@ -18,10 +18,10 @@ jenkins_tag: "2.440.1-jdk17"
 
 # ks-monitoring
 
-prometheus_config_reloader_repo: "ghcr.io/prometheus-operator/prometheus-config-reloader"
-prometheus_config_reloader_tag: "v0.55.1"
-prometheus_operator_repo: ghcr.io/prometheus-operator/prometheus-operator
-prometheus_operator_tag: v0.55.1
+# prometheus_config_reloader_repo: "ghcr.io/prometheus-operator/prometheus-config-reloader"
+# prometheus_config_reloader_tag: "v0.55.1"
+# prometheus_operator_repo: ghcr.io/prometheus-operator/prometheus-operator
+# prometheus_operator_tag: v0.55.1
 
 openpitrix_job_tag: "master"
 kube_state_metrics_repo: "ghcr.io/kubenoops/kube-state-metrics"
