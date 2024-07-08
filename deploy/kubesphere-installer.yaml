@@ -292,7 +292,7 @@ spec:
       serviceAccountName: ks-installer
       containers:
       - name: installer
-        image: ghcr.io/kubenoops/ks-installer:v3.4.0
+        image: ghcr.io/kubenoops/kn-installer:v0.0.3
         imagePullPolicy: "Always"
         resources:
           limits:
