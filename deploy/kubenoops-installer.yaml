@@ -37,14 +37,14 @@ metadata:
 apiVersion: v1
 kind: ServiceAccount
 metadata:
-  name: ks-installer
+  name: kn-installer
   namespace: kubesphere-system
 
 ---
 apiVersion: rbac.authorization.k8s.io/v1
 kind: ClusterRole
 metadata:
-  name: ks-installer
+  name: kn-installer
 rules:
 - apiGroups:
   - ""
@@ -261,33 +261,33 @@ rules:
 kind: ClusterRoleBinding
 apiVersion: rbac.authorization.k8s.io/v1
 metadata:
-  name: ks-installer
+  name: kn-installer
 subjects:
 - kind: ServiceAccount
-  name: ks-installer
+  name: kn-installer
   namespace: kubesphere-system
 roleRef:
   kind: ClusterRole
-  name: ks-installer
+  name: kn-installer
   apiGroup: rbac.authorization.k8s.io
 
 ---
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: ks-installer
+  name: kn-installer
   namespace: kubesphere-system
   labels:
-    app: ks-installer
+    app: kn-installer
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: ks-installer
+      app: kn-installer
   template:
     metadata:
       labels:
-        app: ks-installer
+        app: kn-installer
     spec:
       serviceAccountName: ks-installer
       containers:
