@@ -289,7 +289,7 @@ spec:
       labels:
         app: kn-installer
     spec:
-      serviceAccountName: ks-installer
+      serviceAccountName: kn-installer
       containers:
       - name: installer
         image: ghcr.io/kubenoops/kn-installer:v0.0.3
